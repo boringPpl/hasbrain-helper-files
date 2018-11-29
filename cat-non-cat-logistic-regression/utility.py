@@ -34,3 +34,16 @@ def load_standardlized_dataset():
     train_set_x = train_set_x_flatten/255.
     test_set_x = test_set_x_flatten/255.
     return test_set_x, train_set_y, test_set_x, test_set_y, classes
+
+def sigmoid(z):
+    """
+    Compute the sigmoid of z
+
+    Arguments:
+    z -- A scalar or numpy array of any size.
+
+    Return:
+    s -- sigmoid(z)
+    """
+
+    return 1/(1+np.exp(-z))
