@@ -26,7 +26,7 @@ def read_n_plotting_data():
     plt.show()
     return X,y
 
-def train(features, targets, output_formula, error_formula, update_weights, epochs=100, learnrate=0.01, graph_lines=False):
+def train(features, targets, output_formula, error_formula, update_weights, epochs=100, learnrate=0.01, graph_lines=True):
 
     errors = []
     n_records, n_features = features.shape
