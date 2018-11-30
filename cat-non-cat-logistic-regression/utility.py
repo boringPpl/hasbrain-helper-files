@@ -173,6 +173,39 @@ def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
 
     return params, grads, costs
 
+def predict(w, b, X):
+    '''
+    Predict whether the label is 0 or 1 using learned logistic regression parameters (w, b)
+
+    Arguments:
+    w -- weights, a numpy array of size (num_px * num_px * 3, 1)
+    b -- bias, a scalar
+    X -- data of size (num_px * num_px * 3, number of examples)
+
+    Returns:
+    Y_prediction -- a numpy array (vector) containing all predictions (0/1) for the examples in X
+    '''
+
+    m = X.shape[1]
+    Y_prediction = np.zeros((1,m))
+    w = w.reshape(X.shape[0], 1)
+
+    # Compute vector "A" predicting the probabilities of a cat being present in the picture
+    ### START CODE HERE ### (≈ 1 line of code)
+    A =  sigmoid(np.dot(w.T,X)+ b)
+
+    ### END CODE HERE ###
+    for i in range(A.shape[1]):
+
+        # Convert probabilities A[0,i] to actual predictions p[0,i]
+        ### START CODE HERE ### (≈ 1 line1 of code)
+        Y_prediction = 1. * (A > 0.5)
+        ### END CODE HERE ###
+
+    assert(Y_prediction.shape == (1, m))
+
+    return Y_prediction
+
 def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate = 0.5, print_cost = False):
     """
     Builds the logistic regression model by calling the function you've implemented previously
