@@ -22,13 +22,13 @@ def load_dataset(dir_path):
 
     return train_set_x_orig, train_set_y_orig, test_set_x_orig, test_set_y_orig, classes
 
-def load_standardlized_dataset():
+def load_standardlized_dataset(dir_path):
     '''
     Load the dataset and preprocess it
     Returns:
     - A tuple: (standardlized training data array, training label array, standardlized test data array, test label array, number of class)
     '''
-    train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()
+    train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset(dir_path)
     train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[0],-1).T
     test_set_x_flatten =  test_set_x_orig.reshape(test_set_x_orig.shape[0],-1).T
     train_set_x = train_set_x_flatten/255.
