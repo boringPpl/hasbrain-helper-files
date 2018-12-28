@@ -13,6 +13,7 @@ def sigmoid(z):
     return 1/(1+np.exp(-z))
 
 def propagate(w, b, X, Y):
+    print("Propagate")
     m = X.shape[1]
     A = sigmoid(np.dot(w.T,X)+b)
     cost = -1/m * np.sum(Y * np.log(A) + (1-Y) * (np.log(1-A)))
@@ -32,7 +33,7 @@ def propagate(w, b, X, Y):
 
 def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
     costs = []
-
+    print("Optimize")
     for i in range(num_iterations):
         grads, cost = propagate(w, b, X, Y)
 
@@ -65,7 +66,7 @@ def predict(w, b, X):
     assert(Y_prediction.shape == (1, m))
 
     return Y_prediction
-    
+
 def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate = 0.5, print_cost = False):
     w, b = initialize_with_zeros(X_train.shape[0])
     parameters, grads, costs = optimize(w, b, X_train, Y_train, num_iterations, learning_rate, print_cost = print_cost)
