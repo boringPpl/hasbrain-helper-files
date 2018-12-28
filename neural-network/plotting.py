@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 def plot_decision_boundary(model, X, y):
     # Set min and max values and give it some padding
