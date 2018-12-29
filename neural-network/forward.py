@@ -27,7 +27,7 @@ def forward_propagation(X, parameters):
 
 def forward_propagation_test_case():
     np.random.seed(1)
-    X_assess = np.random.randn(3,2)
+    X_assess = np.random.randn(2,3)
 
     parameters = {'W1': np.array([[-0.00416758, -0.00056267],
         [-0.02136196,  0.01640271],
