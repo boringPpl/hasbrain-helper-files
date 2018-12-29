@@ -40,4 +40,4 @@ def forward_propagation_test_case():
         [ 0.]]),
      'b2': np.array([[ 0.]])}
 
-    return X_assess, parameters
+    return X_assess.T, parameters, np.array([-0.000499755777742,-0.000496963353232,0.000438187450959,0.500109546852])
