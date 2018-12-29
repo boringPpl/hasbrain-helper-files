@@ -1,9 +1,8 @@
 import numpy as np
 
-def forward_propagation_test_case():
+def compute_cost_test_case():
     np.random.seed(1)
-    X_assess = np.random.randn(2,3)
-
+    Y_assess = np.random.randn(1, 3)
     parameters = {'W1': np.array([[-0.00416758, -0.00056267],
         [-0.02136196,  0.01640271],
         [-0.01793436, -0.00841747],
@@ -15,4 +14,6 @@ def forward_propagation_test_case():
         [ 0.]]),
      'b2': np.array([[ 0.]])}
 
-    return X_assess.T, parameters, np.array([-0.000499755777742,-0.000496963353232,0.000438187450959,0.500109546852])
+    a2 = (np.array([[ 0.5002307 ,  0.49985831,  0.50023963]]))
+
+    return a2, Y_assess.T, parameters, 0.692919893776
