@@ -39,7 +39,6 @@ def forward_propagation(X, parameters):
     b2 = parameters["b2"]
 
     Z1 = np.dot(W1,X.T) + b1
-    print(Z1)
     A1 = np.tanh(Z1)
     Z2 = np.dot(W2,A1) + b2
     A2 = sigmoid(Z2)
