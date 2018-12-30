@@ -25,3 +25,19 @@ def forward_propagation(X, parameters):
              "A2": A2}
 
     return A2, cache
+
+def compute_cost(A2, Y, parameters):
+
+    m = Y.shape[0] # number of example
+
+    # Compute the cross-entropy cost
+    ### START CODE HERE ### (≈ 2 lines of code)
+    logprobs = np.multiply(np.log(A2), Y) + np.multiply((1 - Y), np.log(1 - A2))
+    cost = -np.sum(logprobs) / m
+    ### END CODE HERE ###
+
+    cost = np.squeeze(cost)     # makes sure cost is the dimension we expect.
+                                # E.g., turns [[17]] into 17
+    assert(isinstance(cost, float))
+
+    return cost
