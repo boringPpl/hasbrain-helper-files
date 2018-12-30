@@ -14,6 +14,6 @@ def compute_cost_test_case():
         [ 0.]]),
      'b2': np.array([[ 0.]])}
 
-    a2 = (np.array([ 0.5002307 ,  0.49985831,  0.50023963]))
+    a2 = (np.array([[ 0.5002307 ,  0.49985831,  0.50023963]]))
 
     return a2, Y_assess, parameters, 0.692919893776
