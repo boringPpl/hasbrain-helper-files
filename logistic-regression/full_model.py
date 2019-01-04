@@ -13,7 +13,6 @@ def sigmoid(z):
     return 1/(1+np.exp(-z))
 
 def propagate(w, b, X, Y):
-    print("Propagate")
     m = X.shape[1]
     A = sigmoid(np.dot(w.T,X)+b)
     cost = -1/m * np.sum(Y * np.log(A) + (1-Y) * (np.log(1-A)))
@@ -33,7 +32,6 @@ def propagate(w, b, X, Y):
 
 def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
     costs = []
-    print("Optimize")
     for i in range(num_iterations):
         grads, cost = propagate(w, b, X, Y)
 
